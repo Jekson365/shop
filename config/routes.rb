@@ -3,4 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :users
+  post '/promote/:id',to: 'users#promote_to_admin'
+  post '/remove/:id',to: 'users#remove_admin'
+  post '/change/:id',to: 'users#admin_status'
+  post '/delete/:id',to: 'users#change_deleted'
 end

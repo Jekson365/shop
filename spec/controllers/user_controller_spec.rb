@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe UsersController,type: :controller do
   describe "user controller" do
-    let(:user) { create(:user) }
+    let!(:status) { create(:status) }
+    let!(:user) { create(:user,status: status) }
     context "when user is created" do
       it "should add user in database" do
-        expect{ user }.to change(User,:count).by(1)
+        expect{ user }.to change(User, :count).by(1)
       end
     end
 

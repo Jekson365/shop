@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   post '/remove/:id',to: 'users#remove_admin'
   post '/change/:id',to: 'users#admin_status'
   post '/delete/:id',to: 'users#change_deleted'
+  post '/update_status',to: 'users#update_status'
 end

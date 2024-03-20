@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe User,type: :model do
   describe 'when user is created' do
     context "validates username" do
-      let!(:user) { described_class.new(username: "testnam", password: 'testpas$') }
+      let(:status) { create(:status) }
+      let!(:user) { described_class.new(username: "testnam", password: 'testpas$',status: status) }
       it "should have fixed length" do
         expect(user).to be_valid
       end

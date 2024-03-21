@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  belongs_to :status
   validates :username,length: { minimum: 3,maximum:12 },presence: true
   validates :password,length: { minimum: 6,maximum: 14 },presence: true
 

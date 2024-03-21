@@ -42,6 +42,6 @@ class UsersController < ApplicationController
     params.permit(:username,:password)
   end
   def get_user_params
-    params.permit(:username, :password, :is_admin)
+    params.permit(:username, :password, :is_admin,:status_id)
   end
 end
